@@ -1,0 +1,63 @@
+include header.pug
+
+div(class='wrap')
+  div(class='content')
+    header(class='site-header')
+      include site_header_order.pug
+
+    div(class='container')
+      div(class='row')
+        div(class='col col-md-12')
+          h3(class="cart-header") Coș
+          div(id='cart-nav')
+        div(class='col col-md-12')
+          h3 Crează comanda 
+        div(class='col col-md-6')
+          form#lite-shop-order(action="")
+                  div(class='form-control')
+                    label(for='username') Nume
+                    input(
+                        type='text',
+                        id='username',
+                        placeholder='Introduceți numele vostru',
+                        )
+                  div(class='form-control')
+                    label(for='phone') Telefon
+                    input(
+                        type='text',
+                        id='phone',
+                        placeholder='+380505555555',
+                        )
+                  div(class='form-control')
+                    label(for='email') Email
+                    input(
+                        type='text',
+                        id='email',
+                        placeholder='mail@example.com',
+                        )
+                  div(class='form-control')
+                    label(for='address') Adresă
+                    textarea(
+                        id='address',
+                        placeholder='Unde vă aflați',
+                        )
+                  div(class='form-control')
+                    label(for='rule') 
+                      input(
+                          type='checkbox',
+                          id='rule',
+                          value='1'
+                          ) 
+                      span  Termeni și condiții
+                  div(class='form-control text-right')
+                    button(class='button-primary', type='submit') Finisează comanda
+                    
+                    //- button(class='button-primary', type='submit') Paypal
+          form(action="/pay" method="post")
+               script(src='https://www.paypalobjects.com/api/button.js?' data-merchant='braintree' data-id='paypal-button' data-button='checkout' data-color='gold' data-size='medium'  data-button_type='submit' data-button_disabled='false' data-tagline='false')
+
+                      
+  
+  include footer.pug
+  script(src='js/order.js')
+  script(src='css/paypal.scss')

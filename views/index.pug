@@ -1,0 +1,22 @@
+include homepage
+div(class='wrap')
+  div(class='content')
+    
+    
+
+    div(class='container')
+      div(class='row')
+        each val2, index in cat
+            div(class="col col-lg-12")
+                h2
+                  
+                    a(
+                        href='/cat?id='+val2['id']
+                    )   #{val2['category']}
+            
+            each val, index in goods
+                if val2['id'] == val['category']
+                    include card.pug
+
+    include parteneri
+    include footer

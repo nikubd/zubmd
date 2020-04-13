@@ -1,0 +1,14 @@
+html,
+body {
+  height: auto;
+}
+.paypal-button
+{
+  height: auto!important;
+}
+body {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
